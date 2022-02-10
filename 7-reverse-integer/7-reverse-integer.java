@@ -1,14 +1,13 @@
 class Solution {
     public int reverse(int x) {
-        char[] ca = String.valueOf(x).toCharArray();
         Stack<Character> stack = new Stack<>();
-
+        char[] charArray = String.valueOf(x).toCharArray();
         boolean minus = false;
-        for (Character one : ca) {
-            if (one == '-') {
+        for (int i = 0; i < charArray.length; i++) {
+            if (i == 0 && charArray[i] == '-') {
                 minus = true;
             } else {
-                stack.push(one);
+                stack.push(charArray[i]);
             }
         }
 
@@ -18,12 +17,8 @@ class Solution {
         }
 
         try {
-            String resString = String.valueOf(resCharArray);
-            int resInt = Integer.parseInt(resString);
-            if (minus) {
-                return resInt * -1;
-            }
-            return resInt;
+            int res = Integer.parseInt(String.valueOf(resCharArray));
+            return minus ? res * -1 : res;
         } catch (NumberFormatException e) {
             return 0;
         }
