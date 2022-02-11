@@ -24,12 +24,11 @@ class Solution {
 
     public static String search(String s, int start, int end) {
         while (start >= 0 && end <= s.length() - 1) {
-            if (s.charAt(start) == s.charAt(end)) {
-                start--;
-                end++;
-            } else {
+            if (s.charAt(start) != s.charAt(end)) {
                 break;
             }
+            start--;
+            end++;
         }
         return s.substring(start + 1, end);
     }
