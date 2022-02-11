@@ -7,13 +7,13 @@ class Solution {
         String res = s.substring(0, 1);
         for (int i = 0; i < s.length(); i++) {
 
-            // get longest palindrome with center of i
+            // i, i
             String tmp = search(s, i, i);
             if (tmp.length() > res.length()) {
                 res = tmp;
             }
 
-            // get longest palindrome with center of i, i+1
+            // i, i+1
             tmp = search(s, i, i + 1);
             if (tmp.length() > res.length()) {
                 res = tmp;
@@ -23,9 +23,13 @@ class Solution {
     }
 
     public static String search(String s, int start, int end) {
-        while (start >= 0 && end <= s.length() - 1 && s.charAt(start) == s.charAt(end)) {
-            start--;
-            end++;
+        while (start >= 0 && end <= s.length() - 1) {
+            if (s.charAt(start) == s.charAt(end)) {
+                start--;
+                end++;
+            } else {
+                break;
+            }
         }
         return s.substring(start + 1, end);
     }
