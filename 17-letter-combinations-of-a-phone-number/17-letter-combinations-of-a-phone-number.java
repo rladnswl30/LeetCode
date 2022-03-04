@@ -21,7 +21,6 @@ class Solution {
         }
 
         List<String> res = (List)MAP.get(digitArr[0]);
-
         for (int i = 1; i < digitArr.length; i++) {
             List<String> a = res;
             List<String> b = (List)MAP.get(digitArr[i]);
@@ -30,6 +29,7 @@ class Solution {
             for (String j : a) {
                 for (String k : b) {
                     tmp.add(j + k);
+//                    System.out.println(tmp);
                 }
             }
             res = tmp;
