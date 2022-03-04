@@ -13,21 +13,21 @@ class Solution {
         ListNode res = new ListNode();
         res.next = head;
 
-        ListNode current = res;
-        ListNode nthNode = res;
+        ListNode left = res;
+        ListNode right = res;
 
         for (int i = 1; i <= n + 1; i++) {
-            nthNode = nthNode.next;
+            left = left.next;
         }
 //        System.out.println(current.toString());
 
-        while (nthNode != null) {
-            nthNode = nthNode.next;
-            current = current.next;
+        while (left != null) {
+            left = left.next;
+            right = right.next;
         }
 
 //        System.out.println(nthNode.toString());
-        current.next = current.next.next;
+        right.next = right.next.next;
 
         return res.next;
     }
