@@ -16,7 +16,7 @@ class Solution {
         ListNode left = res;
         ListNode right = res;
 
-        for (int i = 1; i <= n + 1; i++) {
+        for (int i = 0; i < n + 1; i++) {
             left = left.next;
         }
 //        System.out.println(current.toString());
