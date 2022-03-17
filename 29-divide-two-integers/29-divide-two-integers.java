@@ -8,14 +8,6 @@ class Solution {
         long d = Math.abs((long) dividend);
         long v = Math.abs((long) divisor);
 
-        if (v == 0) {
-            return Integer.MAX_VALUE;
-        }
-
-        if (d == 0 || d < v) {
-            return 0;
-        }
-
         long res = recursive(d, v);
 
         if (res > Integer.MAX_VALUE) {
