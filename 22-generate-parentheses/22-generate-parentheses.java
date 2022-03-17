@@ -8,8 +8,8 @@ class Solution {
     public static void dfs(int n, int open, int close, String s, List<String> res) {
 //        System.out.println(s);
 
-        // if n = 3, length == 6
-        if (s.length() == n * 2) {
+        // open == close == n
+        if (s.length() == n * 2 && open == close) {
             res.add(s);
             return;
         }
