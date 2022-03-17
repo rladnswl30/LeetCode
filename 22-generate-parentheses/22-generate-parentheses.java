@@ -8,14 +8,18 @@ class Solution {
     public static void dfs(int n, int open, int close, String s, List<String> res) {
 //        System.out.println(s);
 
+        // if n = 3, length == 6
         if (s.length() == n * 2) {
             res.add(s);
             return;
         }
 
+        // open can added lower than n
         if (open < n) {
             dfs(n, open + 1, close, s + "(", res);
         }
+
+        // close can added lower than open
         if (close < open) {
             dfs(n, open, close + 1, s + ")", res);
         }
