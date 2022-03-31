@@ -5,8 +5,8 @@ class Solution {
             negative = true;
         }
 
-        long d = Math.abs((long) dividend);
-        long v = Math.abs((long) divisor);
+        long d = Math.abs((long)dividend);
+        long v = Math.abs((long)divisor);
 
         long res = recursive(d, v);
 
