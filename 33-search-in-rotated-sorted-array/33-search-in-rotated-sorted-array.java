@@ -14,13 +14,13 @@ class Solution {
         }
 
         if (nums[left] <= nums[mid]) { // left 탐색
-            if (nums[left] <= target && target <= nums[mid]) { // target contains left
+            if (nums[left] <= target && nums[mid] >= target) { // target contains left
                 return binarySearch(nums, target, left, mid - 1);
             } else { // target contains right
                 return binarySearch(nums, target,mid + 1, right);
             }
         } else { // right 탐색
-            if (nums[mid] <= target && target <= nums[right]) { // target contains right
+            if (nums[mid] <= target && nums[right] >= target) { // target contains right
                 return binarySearch(nums, target, mid + 1, right);
             } else { // target contains left
                 return binarySearch(nums, target, left, mid - 1);
