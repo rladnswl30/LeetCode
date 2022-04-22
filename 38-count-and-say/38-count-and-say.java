@@ -7,11 +7,12 @@ class Solution {
         String res = "1";
 
         for (int i = 1; i < n; i++) {
-            
+
             StringBuilder sb = new StringBuilder();
             for (int j = 0; j < res.length(); j++) {
 
                 int count = 1;
+                // 중복되는 숫자만큼 카운트 증가
                 while (j + 1 < res.length() && res.charAt(j) == res.charAt(j + 1)) {
                     count++;
                     j++;
@@ -20,7 +21,7 @@ class Solution {
             }
             res = sb.toString();
         }
-        
+
         return res;
     }
 }
